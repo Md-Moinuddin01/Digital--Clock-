@@ -1,1 +1,61 @@
+{
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    font-family: Arial, sans-serif;
+    color: #eafff7;
+    background: #071510;
+}
+
+.clock-card {
+    width: min(90%, 650px);
+    padding: 45px 30px;
+    text-align: center;
+    border: 1px solid #22c983;
+    border-radius: 20px;
+    background: #0d241b;
+    box-shadow: 0 0 35px rgba(34, 201, 131, 0.25);
+}
+
+#date {
+    margin: 0 0 16px;
+    color: #91d8ba;
+    font-size: 1.1rem;
+}
+
+.time-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 12px;
+}
+
+#time {
+    font-family: "Courier New", monospace;
+    font-size: clamp(2.7rem, 10vw, 6rem);
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+#period {
+    padding-bottom: 10px;
+    color: #22c983;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+@media (max-width: 500px) {
+    .clock-card {
+        padding: 35px 15px;
+    }
+
+    #period {
+        padding-bottom: 5px;
+    }
+}
 
