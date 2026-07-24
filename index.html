@@ -15,4 +15,35 @@
         </div>
     </main>
 
-  
+   <script>
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            const period = hours >= 12 ? "PM" : "AM";
+
+            hours = hours % 12 || 12;
+
+            const time = [
+                String(hours).padStart(2, "0"),
+                String(now.getMinutes()).padStart(2, "0"),
+                String(now.getSeconds()).padStart(2, "0")
+            ].join(":");
+
+            const date = now.toLocaleDateString("en-US", {
+                weekday: "long",
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            });
+
+            document.getElementById("time").textContent = time;
+            document.getElementById("period").textContent = period;
+            document.getElementById("date").textContent = date;
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
+
